@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-this
+  labels:
+    app: nginx-this
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-this
+  template:
+    metadata:
+      labels:
+        app: nginx-this
+    spec:
+      containers:
+      - name: nginx-this
+        image: mhmdlutfi/this:latest
+        ports:
+        - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-this
+spec:
+  selector:
+    app: nginx-this
+  ports:
+    - protocol: TCP
+      port: 3000
