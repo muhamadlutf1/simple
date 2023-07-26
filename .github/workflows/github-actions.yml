@@ -28,5 +28,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a multi-line script
         run: |
-          kubectl apply -f deployment.yaml
+          kubectl apply -f kubernetes/deployment.yaml
           kubectl expose deployment nginx-this --name=nginxthis --port=80 --target-port=80 --type=NodePort
