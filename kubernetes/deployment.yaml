@@ -29,7 +29,8 @@ spec:
   selector:
     app: nginx-this
   ports:
-    - protocol: TCP
+    - name: nginxthis
+      protocol: TCP
       port: 3000
       targetport: 3000
       nodeport: 30800
