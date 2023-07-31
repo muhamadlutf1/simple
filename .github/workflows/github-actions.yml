@@ -32,4 +32,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: deploy to kubernetes
-        run: kubectl apply -f kubernetes/deployment.yaml
+        run: |
+          kubectl apply -f kubernetes/deployment.yaml
+          kubectl apply -f kubernetes/service.yaml
