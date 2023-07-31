@@ -27,7 +27,7 @@ jobs:
 
       - name: build image dan push
         run: |
-          sudo docker build -t mhmdlutfi/this
+          sudo docker build -t mhmdlutfi/this .
           sudo docker push mhmdlutfi/this:latest
 
       # Runs a single command using the runners shell
